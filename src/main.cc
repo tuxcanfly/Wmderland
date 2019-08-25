@@ -41,6 +41,7 @@ int main(int argc, char* args[]) {
   // Initialize google's c++ logging library (if installed)
   // Logging-related macros are defined in config.h.in
   WM_INIT_LOGGING(args[0]);
+  google::EnableLogCleaner(3); // automatically removes logs older than 3 days
 
   // WindowManager is a singleton class. If XOpenDisplay() fails during 
   // WindowManager::GetInstance(), it will return None (in Xlib, 'None'
